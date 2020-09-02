@@ -28,7 +28,11 @@ class Recipe(
 
         @ManyToMany
         @JoinTable(name = "recipe_category", joinColumns = [JoinColumn(name = "recipe_id")],
-        inverseJoinColumns = [JoinColumn(name = "recipe_category_id")])
+                inverseJoinColumns = [JoinColumn(name = "category_id")])
         val categories: MutableSet<RecipeCategory> = HashSet()
-): BaseEntity() {
+) : BaseEntity() {
+
+    fun addIngredient(description: String, amount: Number, amountMeasurementUnit: IngredientMeasurementUnit){
+            ingredients.add(Ingredient(description, amount, amountMeasurementUnit, this))
+    }
 }

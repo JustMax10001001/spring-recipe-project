@@ -67,26 +67,24 @@ class Bootstrap(
         val cup = ingredientMeasurementUnitRepository.findByUnitNameIgnoreCase("cup")!!
         val pint = ingredientMeasurementUnitRepository.findByUnitNameIgnoreCase("pint")!!
 
-        recipe.ingredients.addAll(arrayOf(
-                Ingredient("ancho chili powder", 2, tablespoon, recipe),
-                Ingredient("dried oregano", 1, teaspoon, recipe),
-                Ingredient("cumin", 1, teaspoon, recipe),
-                Ingredient("sugar", 1, teaspoon, recipe),
-                Ingredient("salt", 0.5, teaspoon, recipe),
-                Ingredient("finely chopped garlic clove", 1, pcs, recipe),
-                Ingredient("finely grated orange zest", 1, tablespoon, recipe),
-                Ingredient("fresh-squeezed orange juice", 3, tablespoon, recipe),
-                Ingredient("olive oil", 2, tablespoon, recipe),
-                Ingredient("skinned boneless chicken thighs", 4, pcs, recipe),
-                Ingredient("small corn tortillas", 8, pcs, recipe),
-                Ingredient("baby arugula, sliced", 3, cup, recipe),
-                Ingredient("radishes", 4, pcs, recipe),
-                Ingredient("cheery tomatoes", 0.5, pint, recipe),
-                Ingredient("thinly sliced red onion", 0.25, pcs, recipe),
-                Ingredient("roughly chopped cilantro", 1, pcs, recipe),
-                Ingredient("sour cream", 0.5, cup, recipe),
-                Ingredient("lime, cut into wedges", 1, pcs, recipe),
-        ))
+        recipe.addIngredient("ancho chili powder", 2, tablespoon)
+        recipe.addIngredient("dried oregano", 1, teaspoon)
+        recipe.addIngredient("cumin", 1, teaspoon)
+        recipe.addIngredient("sugar", 1, teaspoon)
+        recipe.addIngredient("salt", 0.5, teaspoon)
+        recipe.addIngredient("finely chopped garlic clove", 1, pcs)
+        recipe.addIngredient("finely grated orange zest", 1, tablespoon)
+        recipe.addIngredient("fresh-squeezed orange juice", 3, tablespoon)
+        recipe.addIngredient("olive oil", 2, tablespoon)
+        recipe.addIngredient("skinned boneless chicken thighs", 4, pcs)
+        recipe.addIngredient("small corn tortillas", 8, pcs)
+        recipe.addIngredient("baby arugula, sliced", 3, cup)
+        recipe.addIngredient("radishes", 4, pcs)
+        recipe.addIngredient("cheery tomatoes", 0.5, pint)
+        recipe.addIngredient("thinly sliced red onion", 0.25, pcs)
+        recipe.addIngredient("roughly chopped cilantro", 1, pcs)
+        recipe.addIngredient("sour cream", 0.5, cup)
+        recipe.addIngredient("lime, cut into wedges", 1, pcs)
 
         val categoryMexican = recipeCategoryRepository.findByName("Mexican")!!
         val categoryAmerican = recipeCategoryRepository.findByName("American")!!
@@ -134,18 +132,16 @@ class Bootstrap(
         val tablespoon = ingredientMeasurementUnitRepository.findByUnitName("Tablespoon")!!
         val dash = ingredientMeasurementUnitRepository.findByUnitName("Dash")!!
 
-        recipe.ingredients.addAll(arrayOf(
-                Ingredient("ripe avocados", 2, pcs, recipe),
-                Ingredient("of salt", 0.25, teaspoon, recipe),
-                Ingredient("fresh lime or lemon juice", 1, tablespoon, recipe),
-                Ingredient("minced red onion", 2, tablespoon, recipe),
-                Ingredient("serrano chilies with stems and seeds removed, minced", 2, pcs, recipe),
-                Ingredient("finely chopped cilantro", 2, tablespoon, recipe),
-                Ingredient("freshly grated black pepper", 1, dash, recipe),
-                Ingredient("ripe tomato with seeds and pulp removed and chopped", 0.5, pcs, recipe),
-                Ingredient("red radishes or jicama, to garnish", 0, pcs, recipe),
-                Ingredient("tortilla chips, to serve", 0, pcs, recipe),
-        ))
+        recipe.addIngredient("ripe avocados", 2, pcs)
+        recipe.addIngredient("of salt", 0.25, teaspoon)
+        recipe.addIngredient("fresh lime or lemon juice", 1, tablespoon)
+        recipe.addIngredient("minced red onion", 2, tablespoon)
+        recipe.addIngredient("serrano chilies with stems and seeds removed, minced", 2, pcs)
+        recipe.addIngredient("finely chopped cilantro", 2, tablespoon)
+        recipe.addIngredient("freshly grated black pepper", 1, dash)
+        recipe.addIngredient("ripe tomato with seeds and pulp removed and chopped", 0.5, pcs)
+        recipe.addIngredient("red radishes or jicama, to garnish", 0, pcs)
+        recipe.addIngredient("tortilla chips, to serve", 0, pcs)
 
         val categoryMexican = recipeCategoryRepository.findByName("Mexican")!!
         recipe.categories.add(categoryMexican)
