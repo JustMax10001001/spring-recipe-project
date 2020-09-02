@@ -1,8 +1,10 @@
 package com.justsoft.srp.model
 
+import com.justsoft.srp.dsl.RecipeDslMarker
 import javax.persistence.*
 
 @Entity
+@RecipeDslMarker
 class Recipe(
         @Column(nullable = false) var name: String,
         @Column(nullable = false) var description: String,
@@ -32,7 +34,8 @@ class Recipe(
         val categories: MutableSet<RecipeCategory> = HashSet()
 ) : BaseEntity() {
 
-    fun addIngredient(description: String, amount: Number, amountMeasurementUnit: IngredientMeasurementUnit){
-            ingredients.add(Ingredient(description, amount, amountMeasurementUnit, this))
+    fun addIngredient(description: String, amount: Number, amountMeasurementUnit: IngredientMeasurementUnit) {
+        ingredients.add(Ingredient(description, amount, amountMeasurementUnit, this))
     }
 }
+

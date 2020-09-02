@@ -14,5 +14,6 @@ class Ingredient(
         var amountMeasurementUnit: IngredientMeasurementUnit,
 
         @ManyToOne
-        var recipe: Recipe
+        var recipe: Recipe?
 ): BaseEntity()
+
