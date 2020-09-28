@@ -11,6 +11,10 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
+import org.springframework.http.MediaType
+import org.springframework.test.web.servlet.post
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.ui.Model
 
 internal class IndexControllerTest {
@@ -24,6 +28,17 @@ internal class IndexControllerTest {
     fun setUp() {
         MockitoAnnotations.initMocks(this)
         indexController = IndexController(recipeService)
+    }
+
+    @Test
+    fun testMockMvc() {
+        val mockMvc = MockMvcBuilders.standaloneSetup(indexController).build()
+
+        mockMvc.post("/")
+                .andExpect {
+                    status { isOk }
+                    view { name("index") }
+                }
     }
 
     @Test
