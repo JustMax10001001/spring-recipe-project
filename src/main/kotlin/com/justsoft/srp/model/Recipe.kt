@@ -5,7 +5,7 @@ import javax.persistence.*
 
 @Entity
 @RecipeDslMarker
-class Recipe(
+open class Recipe(
         @Column(nullable = false) var name: String,
         @Column(nullable = false) var description: String,
         @Column(nullable = false) var prepTime: Int,
