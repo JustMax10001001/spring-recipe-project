@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.context.annotation.Configuration
 import org.springframework.test.context.junit.jupiter.SpringExtension
-import org.springframework.test.context.junit4.SpringRunner
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest
@@ -19,10 +16,18 @@ class IngredientMeasurementUnitRepositoryIT {
     lateinit var ingredientMeasurementUnitRepository: IngredientMeasurementUnitRepository
 
     @Test
-    fun test_findByName() {
+    fun test_findTeaspoonByName() {
         val teaspoon = ingredientMeasurementUnitRepository.findByUnitNameIgnoreCase("teaspoon")
 
         assertNotNull(teaspoon)
         assertEquals("Teaspoon", teaspoon?.unitName)
+    }
+
+    @Test
+    fun test_findCupByName(){
+        val cup = ingredientMeasurementUnitRepository.findByUnitNameIgnoreCase("cup")
+
+        assertNotNull(cup)
+        assertEquals("Cup", cup?.unitName)
     }
 }
